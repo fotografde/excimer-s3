@@ -11,7 +11,7 @@
   "type": "library",
   "require": {
     "ext-excimer": "*",
-    "aws/aws-sdk-php": "^3.322",
+    "aws/aws-sdk-php": "^3.301.7",
     "enqueue/dsn": "^0.10.19"
   },
   "require-dev": {
