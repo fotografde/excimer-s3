@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<psalm
+    xmlns="https://getpsalm.org/schema/config"
+    errorLevel="1"
+    useDocblockTypes="true"
+    useDocblockPropertyTypes="true"
+    ignoreInternalFunctionFalseReturn="true"
+    ignoreInternalFunctionNullReturn="false"
+    ensureArrayIntOffsetsExist="true"
+    findUnusedPsalmSuppress="true"
+    findUnusedCode="false"
+    findUnusedVariablesAndParams="true"
+    findUnusedBaselineEntry="false"
+    strictBinaryOperands="true"
+    reportMixedIssues="true"
+    ensureArrayStringOffsetsExist="true"
+    cacheDirectory=".ci-cache/psalm"
+>
+    <projectFiles>
+        <directory name="src"/>
+    </projectFiles>
+
+    <issueHandlers>
+        <PropertyNotSetInConstructor errorLevel="suppress"/> <!-- We can set it with serializers or hydrators -->
+    </issueHandlers>
+</psalm>
