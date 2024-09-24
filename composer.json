@@ -7,7 +7,7 @@
     }
   ],
   "description": "profiler eximer s3 collector",
-  "license": "proprietary",
+  "license": "MIT",
   "type": "library",
   "require": {
     "ext-excimer": "*",
