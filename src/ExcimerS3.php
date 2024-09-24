@@ -165,7 +165,7 @@ final readonly class ExcimerS3
         $startTime = microtime(true);
         $this->s3Client->registerStreamWrapperV2();
         $date = date(self::DATE_FORMAT_SHORT);
-        $stream = fopen("s3://{$this->bucketName}/{$profilePath}/{$date}.json", 'w');
+        $stream = fopen("s3://{$this->bucketName}/{$profilePath}/{$date}.csv", 'w');
         $timer->setCallback(function () use ($startTime, $stream) {
             $usage = sprintf("%.2f", memory_get_usage() / 1048576); // MB
             $interval = (microtime(true) - $startTime);
