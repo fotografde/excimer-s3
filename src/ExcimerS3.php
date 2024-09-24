@@ -45,7 +45,7 @@ final readonly class ExcimerS3
         $dsn = Dsn::parseFirst($dsnString);
         if (null === $dsn || $dsn->getSchemeProtocol() !== 's3') {
             throw new \InvalidArgumentException(
-                'Malformed parameter "dsn". example: "s3+http://key:secret@aws:4100/123456789012?region=eu-west-1assume=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fxaccounts3access&bucket=BucketName"'
+                'Malformed parameter "dsn". example: "s3+http://key:secret@aws:4100/123456789012?region=eu-west-1&assume=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fxaccounts3access&bucket=BucketName"'
             );
         }
 
