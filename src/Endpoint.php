@@ -8,8 +8,11 @@ namespace Gpht\ExcimerS3;
  */
 final class Endpoint
 {
-    public static function web(string $dsnString, string $prefix = 'app'): void
+    public static function web(mixed $dsnString, string $prefix = 'app'): void
     {
+        if (!is_string($dsnString) || empty($dsnString)) {
+            return;
+        }
         if ((isset($_GET['profile']) || isset($_GET['timer'])) && extension_loaded('excimer')) {
             $excimer = ExcimerS3::ofDsn($dsnString);
             if (isset($_GET['profile']) && is_string($_GET['profile'])) {
@@ -23,8 +26,11 @@ final class Endpoint
         }
     }
 
-    public static function cli(string $dsnString, string $prefix = 'app'): void
+    public static function cli(mixed $dsnString, string $prefix = 'app'): void
     {
+        if (!is_string($dsnString) || empty($dsnString)) {
+            return;
+        }
         if (extension_loaded('excimer') && ((getenv("PROFILE") !== false) || (getenv("TIMER") !== false))) {
             $excimer = ExcimerS3::ofDsn($dsnString);
             $profilePath = getenv("PROFILE");
