@@ -3,7 +3,6 @@
 namespace Gpht\ExcimerS3;
 
 /**
- * @internal
  * @immutable
  * @psalm-immutable
  */
