@@ -77,7 +77,7 @@ final readonly class ExcimerS3
                 'secret' => $password,
             ];
         } else {
-            $provider = CredentialProvider::defaultProvider();
+            $provider = CredentialProvider::defaultProvider($clientConfig);
             $clientConfig['credentials'] = $provider;
         }
         $assume = $dsn->getString('assume', null);
